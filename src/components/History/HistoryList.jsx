@@ -3,7 +3,7 @@ import HistoryItem from './HistoryItem';
 import { useProvider } from '../../hooks/Provider';
 
 const HistoryList = () => {
-  const { history } = useProvider;
+  const { history } = useProvider();
   const historyNodes = history
     .map((item, i) => (
       <li key={i}>

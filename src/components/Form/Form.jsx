@@ -4,7 +4,6 @@ import { useProvider } from '../../hooks/Provider';
 
 const Form = () => {
   const { url, method, textBody, onChange, onSubmit } = useProvider();
-  
   return (
     <div className={style.Form}>
       <form className={style.Form} onSubmit={onSubmit}>

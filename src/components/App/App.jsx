@@ -5,11 +5,9 @@ import Main from '../Main/Main';
 
 export default function App() {
   return (
-    <>
-      <RestyProvider>
-        <Header/>
-        <Main />
-      </RestyProvider>
-    </>
+    <RestyProvider>
+      <Header/>
+      <Main />
+    </RestyProvider>
   );
 }

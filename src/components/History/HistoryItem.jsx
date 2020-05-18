@@ -1,10 +1,12 @@
 import React from 'react';
+import { useProvider } from '../../hooks/Provider';
 
-const HistoryItem = ({ url, method }) => (
+const HistoryItem = () => {
+  const { url, method } = useProvider();
   <section>
     <p>{url}</p>
     <p>{method}</p>
-  </section>
-);
+  </section>;
+};
 
 export default HistoryItem;

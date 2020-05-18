@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`History Item component renders History Item 1`] = `
+<section>
+  <p>
+    http://www.randomapi.com
+  </p>
+  <p>
+    GET
+  </p>
+</section>
+`;

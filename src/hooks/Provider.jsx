@@ -3,11 +3,11 @@ import { fetchRequest } from '../services/fetchRequest';
 
 const RestyContext = createContext();
 
-export const RestyProvider = (children) => {
+export const RestyProvider = ({ children }) => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('GET');
   const [textBody, setTextBody] = useState('');
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState([]);
   const [history, setHistory] = useState([]);
 
   const onChange = ({ target }) => {

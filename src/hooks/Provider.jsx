@@ -5,10 +5,10 @@ const RestyContext = createContext();
 export const RestyProvider = (children) => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('GET');
-  const [body, setBody] = useState('');
+  const [textBody, setTextBody] = useState('');
 
   return (
-    <RestyContext.Provider value ={{ url, method, body }}>
+    <RestyContext.Provider value ={{ url, method, textBody }}>
       {children}
     </RestyContext.Provider>
   );

@@ -1,7 +1,10 @@
 import React from 'react';
 import style from './FormStyle.css';
+import { useProvider } from '../../hooks/Provider';
 
-const Form = () => (
+const Form = () => {
+  const { url, method, textBody } = useProvider();
+
   <div className={style.Form}>
     <form className={style.Form} onSubmit={onSubmit}>
       
@@ -23,7 +26,8 @@ const Form = () => (
             className={style.RadioButton}
             type="radio" 
             name="method" 
-            value="GET" 
+            value="GET"
+            checked={method === 'GET'} 
             onChange={onChange}
           /> GET 
         </label>
@@ -33,6 +37,7 @@ const Form = () => (
             type="radio" 
             name="method" 
             value="POST"
+            checked={method === 'POST'}
             onChange={onChange}
           /> POST 
         </label>
@@ -42,6 +47,7 @@ const Form = () => (
             type="radio" 
             name="method" 
             value="PUT"
+            checked={method === 'PUT'}
             onChange={onChange} 
           /> PUT 
         </label>
@@ -51,6 +57,7 @@ const Form = () => (
             type="radio" 
             name="method" 
             value="PATCH" 
+            checked={method === 'PATCH'}
             onChange={onChange}
           /> PATCH 
         </label>
@@ -60,6 +67,7 @@ const Form = () => (
             type="radio" 
             name="method" 
             value="DELETE"
+            checked={method === 'DELETE'}
             onChange={onChange}
           /> DELETE 
         </label>
@@ -76,8 +84,7 @@ const Form = () => (
       <button type="submit">GO!</button>
 
     </form>
-  </div>
-);
+  </div>;
+};
 
 export default Form;
-

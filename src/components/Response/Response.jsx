@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import style from './Response.css';
 
 const Response = ({ response }) => (
@@ -10,10 +9,4 @@ const Response = ({ response }) => (
   </section>
 );
 
-Response.propTypes = {
-  response: PropTypes.object.isRequired
-};
-
 export default Response;
-
-

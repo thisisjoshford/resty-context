@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import { fetchRequest } from '../services/fetchRequest';
 
 const RestyContext = createContext();
 
@@ -11,10 +12,16 @@ export const RestyProvider = (children) => {
     if(target.name === 'url') setUrl(target.value);
     if(target.name === 'method') setMethod(target.value);
     if(target.name === 'textBody') setTextBody(target.value);
-  }
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    fetchRequest(url, method, textBody)
+      .then(res => console.log(res));
+  };
 
   return (
-    <RestyContext.Provider value ={{ url, method, textBody }}>
+    <RestyContext.Provider value ={{ url, method, textBody, onChange, onSubmit }}>
       {children}
     </RestyContext.Provider>
   );

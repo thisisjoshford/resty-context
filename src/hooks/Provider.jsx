@@ -8,6 +8,7 @@ export const RestyProvider = (children) => {
   const [method, setMethod] = useState('GET');
   const [textBody, setTextBody] = useState('');
   const [response, setResponse] = useState({});
+  const [history, setHistory] = useState([]);
 
   const onChange = ({ target }) => {
     if(target.name === 'url') setUrl(target.value);
@@ -18,7 +19,11 @@ export const RestyProvider = (children) => {
   const onSubmit = event => {
     event.preventDefault();
     fetchRequest(url, method, textBody)
-      .then(res => setResponse(res));
+      .then(res => {
+        setResponse(res);
+        setHistory(prevHistory => 
+          [{ url, method }, ...prevHistory]);
+      });
   };
 
   return (
@@ -27,7 +32,8 @@ export const RestyProvider = (children) => {
         url, 
         method, 
         textBody, 
-        response, 
+        response,
+        history, 
         onChange, 
         onSubmit 
       }}>

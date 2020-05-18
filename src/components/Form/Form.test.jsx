@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Form from './Form';
+import { RestyProvider } from '../../hooks/Provider';
 
 describe('Form component', () => {
 
@@ -8,12 +9,10 @@ describe('Form component', () => {
 
   it('renders Form', () => {
     const wrapper = shallow(
-      <Form 
-        url={url} 
-        textBody=""
-        onChange={() => {}} 
-        onSubmit={() => {}}
-      />);
+      <RestyProvider>
+        <Form />
+      </RestyProvider>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });

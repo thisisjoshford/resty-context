@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import style from './FormStyle.css';
 
-const Form = ({ url, textBody, onChange, onSubmit }) => (
+const Form = () => (
   <div className={style.Form}>
     <form className={style.Form} onSubmit={onSubmit}>
       
@@ -79,13 +78,6 @@ const Form = ({ url, textBody, onChange, onSubmit }) => (
     </form>
   </div>
 );
-
-Form.propTypes = {
-  url: PropTypes.string.isRequired,
-  textBody: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default Form;
 

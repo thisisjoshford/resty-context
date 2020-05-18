@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
+import { useProvider } from '../../hooks/Provider';
 
 const HistoryList = () => {
+  const { history } = useProvider;
   const historyNodes = history
     .map((item, i) => (
       <li key={i}>

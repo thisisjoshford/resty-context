@@ -3,7 +3,7 @@ import style from './FormStyle.css';
 import { useProvider } from '../../hooks/Provider';
 
 const Form = () => {
-  const { url, method, textBody } = useProvider();
+  const { url, method, textBody, onChange } = useProvider();
 
   <div className={style.Form}>
     <form className={style.Form} onSubmit={onSubmit}>

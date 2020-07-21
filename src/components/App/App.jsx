@@ -1,6 +1,13 @@
 import React from 'react';
+import { RestyProvider } from '../../hooks/Provider';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <RestyProvider>
+      <Header/>
+      <Main />
+    </RestyProvider>
+  );
 }
-  
